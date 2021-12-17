@@ -2,9 +2,11 @@ import { FC } from "react";
 import "./Beranda.scss";
 
 const Beranda: FC<IBeranda> = () => {
-  return <div>
+  return (
+    <div>
 
-  </div>
+    </div>
+  )
 }
 
 export default Beranda
