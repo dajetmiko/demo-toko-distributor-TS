@@ -15,13 +15,13 @@ const useKeSamping: TUseKeSamping = (listGbr) => {
       setTimeout(() => {
         setLokasi(lokasi === (listGbr.length - 1) ? 0 : lokasi + 1);
         setKeKanan(false); 
-      }, 200)
+      }, 198)
     }
     if(keKiri){
       setTimeout(() => {
         setLokasi(lokasi === 0 ? (listGbr.length - 1) : lokasi - 1);
         setKeKiri(false); 
-      }, 200)
+      }, 198)
     }
   }, [keKanan, keKiri])
 
