@@ -2,7 +2,7 @@ import axios from "axios"
 import IDataCarousel from "data/IDataCarousel"
 import { useEffect, useState } from "react"
 
-const api: string = process.env.API_GARDIEN!
+const api: string = "https://gardien.tokodistributor.co.id"
 
 const useFetchCarousel: TUseFetchCarousel = () => {
   const [data, setData] = useState<IDataCarousel[]>([])

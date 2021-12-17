@@ -7,7 +7,7 @@ const Beranda: FC<IBeranda> = () => {
   const [dataCarousel, loadingCarousel, erCarousel] = useFetchCarousel()
   return (
     <div>
-      <CarouselBeranda listGbr={} />
+      <CarouselBeranda listCarousel={dataCarousel} />
     </div>
   )
 }

@@ -1,6 +1,4 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "Apl.scss"
 import Beranda from 'laman/Beranda';
 
 function Apl() {
