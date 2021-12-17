@@ -32,8 +32,9 @@ const CarouselBeranda: FC<ICarouselBeranda> = (p) => {
   )
 }
 
-export default CarouselBeranda
-
 interface ICarouselBeranda{
   listCarousel: IDataCarousel[],
 }
+
+export default CarouselBeranda
+

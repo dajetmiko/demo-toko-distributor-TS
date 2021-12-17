@@ -6,7 +6,7 @@ const Kategori: FC<IKategori> = (p) => {
   return (
     <section className="kategori-apl">
       <ul className="list-kategori">
-        {p.listKategori.map((nilai, indeks) => indeks <= 7 ? <IsiKategori kategori={nilai} key={indeks}/> : <></>)}
+        {p.listKategori.map((nilai, indeks) => indeks >= 6 ? <IsiKategori kategori={nilai} key={indeks}/> : <></>)}
       </ul>
     </section>
     )

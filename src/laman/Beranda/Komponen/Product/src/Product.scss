@@ -1,0 +1,92 @@
+.product-apl{
+    width: 100%;
+
+    .list-product{
+        padding: 0;
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        @media screen and (max-width: 1200px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        @media screen and (max-width: 800px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        @media screen and (max-width: 600px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media screen and (max-width: 300px) {
+            grid-template-columns: 1fr;
+        }
+
+        .kontainer-isi-product{
+            width: 100%;
+            padding-bottom: 160%;
+            position: relative;
+            @media screen and (max-width: 400px) {
+                padding-bottom: 180%;
+            }
+            @media screen and (max-width: 300px) {
+                padding-bottom: 160%;
+            }
+
+
+            .isi-product{
+                width: 90%;
+                height: fit-content;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 0 10px #0000005d;
+                transition: width 200ms ;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                &:hover{
+                    cursor: pointer;
+                    width: 95%;
+                }
+
+                .kontainer-gbr{
+                    width: 100%;
+                    padding-bottom: 120%;
+                    border-radius: 10px;
+                    position: relative;
+                    .gbr{
+                        position: absolute;
+                        width: 100%; 
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                }
+
+
+                h6{
+                    margin: 0 5px;
+                    width: 100%;
+                }
+
+                .nama-product{
+                    margin: 7px 5px;
+                    font-size: 11px;
+                    height: 24px;
+                    line-height: 12px;
+                }
+
+                .harga-product{
+                    color: #ff0000;
+                    font-size: 15px;
+                    margin-bottom: 5px;
+                }
+
+                .lokasi-product{
+                    margin-bottom: 10px;
+                    color: #5e5e5e;
+                }
+
+            }
+        }
+    }
+}
