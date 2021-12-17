@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { FC, useState } from "react"
 import "./Pencarian.scss"
 
 const Pencarian: FC<IPencarian> = (p) => {
