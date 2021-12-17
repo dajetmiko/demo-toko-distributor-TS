@@ -1,6 +1,6 @@
 import { Dispatch, useEffect, useState } from "react";
 
-
+//fungsi untuk mengubah url gbr dan ubah ke samping
 const useKeSamping: TUseKeSamping = (listGbr) => {
   const [keKanan, setKeKanan] = useState(false)
   const [keKiri, setKeKiri] = useState(false)
