@@ -1,4 +1,6 @@
 import IDataCarousel from "data/IDataCarousel"
+import IDataCategory from "data/IDataCategory"
+import IDataProduct from "data/IDataProduct"
 
 
 export type TypeAksi = 'CACHE_LAMAN'
@@ -6,12 +8,14 @@ export type TypeAksi = 'CACHE_LAMAN'
 type IPayloadCache = {
   laman: string,
   scrollY: number,
-  dataCarousel: IDataCarousel
+  dataCarousel: IDataCarousel,
+  dataCategory: IDataCategory,
+  dataProduct: IDataProduct
 }
 
 export interface IAksi {
   type: TypeAksi,
-  payload: {scrollY: number, },
+  payload: IPayloadCache,
 }
 
 export function cacheLamanReducer(state: any = null, action:IAksi){
