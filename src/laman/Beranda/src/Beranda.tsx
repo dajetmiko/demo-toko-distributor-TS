@@ -16,8 +16,6 @@ const Beranda: FC<IBeranda> = () => {
   )
 }
 
+interface IBeranda{}
+
 export default Beranda
-
-interface IBeranda{
-
-}
