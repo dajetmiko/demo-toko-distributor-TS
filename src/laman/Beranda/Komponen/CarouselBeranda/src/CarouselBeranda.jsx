@@ -1,4 +1,3 @@
-import { FC, useEffect } from "react"
 import useBisaKlik from "../fungsi/useBisaKlik"
 import useKeSamping from "../fungsi/useKeSamping"
 import useScrapeGbr from "../fungsi/useScrapeGbr"
@@ -8,7 +7,7 @@ import "./CarouselBeranda.scss"
 import useFetchCarousel from "../fungsi/useFetchCarousel"
 import Skeleton from "react-loading-skeleton"
 
-const CarouselBeranda: FC<ICarouselBeranda> = (p) => {
+const CarouselBeranda = (p) => {
   const [dataCarousel, loadingCarousel, erCarousel] = useFetchCarousel()
 
   const urlGbr = useScrapeGbr(dataCarousel)
@@ -40,8 +39,6 @@ const CarouselBeranda: FC<ICarouselBeranda> = (p) => {
     </section>
   )
 }
-
-interface ICarouselBeranda{}
 
 export default CarouselBeranda
 

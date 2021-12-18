@@ -1,6 +1,6 @@
-import { RefObject, useEffect, useState } from "react"
+import {  useEffect, useState } from "react"
 
-const useDalamLayar = (ref: RefObject<HTMLLIElement>) => {
+const useDalamLayar = (ref) => {
 
   const [adaInterseksi, setAdaInterrseksi] = useState(false)
 
@@ -9,9 +9,9 @@ const useDalamLayar = (ref: RefObject<HTMLLIElement>) => {
   )
 
   useEffect(() => {
-    if(ref.current !== null){
-      observer.observe(ref.current)
-      return () => { observer.disconnect() }
+    if(ref.current){
+      observer?.observe(ref.current)
+      return () => { observer?.disconnect() }
     }
   }, [ref.current])
 

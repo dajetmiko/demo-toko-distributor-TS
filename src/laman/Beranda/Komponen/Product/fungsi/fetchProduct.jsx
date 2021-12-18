@@ -1,14 +1,13 @@
 import axios from "axios"
-import IDataProduct from "data/IDataProduct"
 
 const api = "https://gardien.tokodistributor.co.id"
 
-const fetchProduct: TFetchProduct = async (lamanTerload) => {
+const fetchProduct = async (lamanTerload) => {
   try{
     const resp = await axios
     .get(api + `/api-web/v2/product-recommendation?page=${lamanTerload + 1}`)
     if(resp.data.data){
-      const kategDapat = resp.data.data as IDataProduct[]
+      const kategDapat = resp.data.data 
       return {data: kategDapat,lamanTerload: lamanTerload + 1, success: true, error: null}
     }else{
       return {data: [], lamanTerload: lamanTerload, success: false, error: null}
@@ -21,12 +20,5 @@ const fetchProduct: TFetchProduct = async (lamanTerload) => {
     }
   }
 }
-
-type TFetchProduct = (lamanTerload: number) => Promise<{
-  data: IDataProduct[];
-  lamanTerload: number;
-  success: boolean;
-  error: null | string;
-}>
 
 export default fetchProduct

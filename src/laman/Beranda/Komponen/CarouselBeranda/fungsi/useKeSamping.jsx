@@ -1,7 +1,7 @@
 import { Dispatch, useEffect, useState } from "react";
 
 //fungsi untuk mengubah url gbr dan ubah ke samping
-const useKeSamping: TUseKeSamping = (listGbr) => {
+const useKeSamping = (listGbr) => {
   const [keKanan, setKeKanan] = useState(false)
   const [keKiri, setKeKiri] = useState(false)
   const [gbrSebelum, setGbrSebelum] = useState("")
@@ -45,12 +45,3 @@ const useKeSamping: TUseKeSamping = (listGbr) => {
 }
 
 export default useKeSamping
-
-type TUseKeSamping = (gbrUrl: string[]) => 
-  [Dispatch<boolean>, Dispatch<boolean>, boolean, boolean, IIsiGbr];
-
-interface IIsiGbr{
-  gbrSebelum: string,
-  gbrSetelah: string,
-  gbrSekarang: string
-}

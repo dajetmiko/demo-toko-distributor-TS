@@ -1,10 +1,8 @@
 import "./Product.scss"
-import { FC, RefObject } from "react"
-import IDataProduct from "data/IDataProduct"
 import useFetchProduct from "../fungsi/useFetchProduct"
 import { BeatLoader } from "react-spinners"
 
-const Product: FC<IProduct> = (p) => {
+const Product = (p) => {
   const [product, loading, error, lamanTerload, refTerakhir] = useFetchProduct()
   return (
     <section className="product-apl">
@@ -24,9 +22,7 @@ const Product: FC<IProduct> = (p) => {
   )
 }
 
-interface IProduct{}
-
-const IsiProduct: FC<IIsiProduct> = (p) => {
+const IsiProduct = (p) => {
   const adalahObjTerakhir = ((p.lamanTerload * 20) - 1) === p.indeks
   return (
     <li className="kontainer-isi-product" ref={adalahObjTerakhir ? p.refTerakhir : undefined}>
@@ -46,13 +42,6 @@ const IsiProduct: FC<IIsiProduct> = (p) => {
       </div>
     </li>
   )
-}
-
-interface IIsiProduct{
-  produk: IDataProduct;
-  refTerakhir: RefObject<HTMLLIElement>;
-  indeks: number;
-  lamanTerload: number;
 }
 
 export default Product

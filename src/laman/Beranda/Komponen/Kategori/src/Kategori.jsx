@@ -1,10 +1,8 @@
-import IDataCategory from "data/IDataCategory"
-import { FC } from "react"
 import useFetchKategori from "../fungsi/useFetchKategori"
 import Skeleton from "react-loading-skeleton"
 import "./Kategori.scss"
 
-const Kategori: FC<IKategori> = (p) => {
+const Kategori = (p) => {
   const [dataKategori, loadingKategori, erKategori] = useFetchKategori()
 
   return (
@@ -17,11 +15,7 @@ const Kategori: FC<IKategori> = (p) => {
 }
 
 
-
-interface IKategori{}
-
-
-const IsiKategori: FC<IIsiKategori> = (p) => {
+const IsiKategori = (p) => {
   return (
     <li className="kontainer-isi-kategori" key={p.key}>
       <div className="isi-kategori">
@@ -32,11 +26,6 @@ const IsiKategori: FC<IIsiKategori> = (p) => {
       </div>
     </li>
   )
-}
-
-interface IIsiKategori{
-  kategori: IDataCategory
-  key: number
 }
 
 export default Kategori

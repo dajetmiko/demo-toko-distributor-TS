@@ -1,10 +1,9 @@
-import IDataCarousel from "data/IDataCarousel"
 import useDimensiLayar from "laman/Beranda/fungsi/useDimensiLayar"
 import { useEffect, useState } from "react"
 
 
-const useScrapeGbr = (carousel: IDataCarousel[]) => {
-  const [urlGbr, setUrlGbr] = useState<string[]>([])
+const useScrapeGbr = (carousel) => {
+  const [urlGbr, setUrlGbr] = useState([])
   const [lebarLayar] = useDimensiLayar()
 
   const [mobile, setMobile] = useState(false)

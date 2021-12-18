@@ -1,11 +1,10 @@
 import axios from "axios"
-import IDataCategory from "data/IDataCategory"
 import { useEffect, useState } from "react"
 
-const api: string = "https://gardien.tokodistributor.co.id"
+const api = "https://gardien.tokodistributor.co.id"
 
-const useFetchKategori: TUseFetchKategori = () => {
-  const [data, setData] = useState<IDataCategory[]>([])
+const useFetchKategori = () => {
+  const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setEror] = useState(false)
   useEffect(() => {
@@ -26,13 +25,11 @@ const useFetchKategori: TUseFetchKategori = () => {
   return [data, loading, error]
 }
 
-type TUseFetchKategori = () => [IDataCategory[], boolean, boolean]
-
-const fetchKategori: TFetchKategori = async () => {
+const fetchKategori = async () => {
   try{
     const resp = await axios.get(api + "/api-web/v2/utility/home/box-category?with_staple=true")
     if(resp.data.data){
-      const kategDapat = resp.data.data as IDataCategory[]
+      const kategDapat = resp.data.data 
       return {data: kategDapat, success: true, error: null}
     }else{
       return {data: [], success: false, error: null}
@@ -45,11 +42,5 @@ const fetchKategori: TFetchKategori = async () => {
     }
   }
 }
-
-type TFetchKategori = () => Promise<{
-  data: IDataCategory[];
-  success: boolean;
-  error: null | string;
-}>
 
 export default useFetchKategori

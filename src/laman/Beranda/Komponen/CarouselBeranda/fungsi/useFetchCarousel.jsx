@@ -1,11 +1,10 @@
 import axios from "axios"
-import IDataCarousel from "data/IDataCarousel"
 import { useEffect, useState } from "react"
 
-const api: string = "https://gardien.tokodistributor.co.id"
+const api = "https://gardien.tokodistributor.co.id"
 
-const useFetchCarousel: TUseFetchCarousel = () => {
-  const [data, setData] = useState<IDataCarousel[]>([])
+const useFetchCarousel = () => {
+  const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setEror] = useState(false)
   useEffect(() => {
@@ -26,13 +25,11 @@ const useFetchCarousel: TUseFetchCarousel = () => {
   return [data, loading, error]
 }
 
-type TUseFetchCarousel = () => [IDataCarousel[], boolean, boolean]
-
-const fetchCarousel: TFetchCarousel = async () => {
+const fetchCarousel = async () => {
   try{
     const resp = await axios.get(api + "/api-web/v2/utility/home/banner-web")
     if(resp.data.data){
-      const carouselDapat = resp.data.data as IDataCarousel[]
+      const carouselDapat = resp.data.data
       return {data: carouselDapat, success: true, error: null}
     }else{
       return {data: [], success: false, error: null}
@@ -45,11 +42,5 @@ const fetchCarousel: TFetchCarousel = async () => {
     }
   }
 }
-
-type TFetchCarousel = () => Promise<{
-  data: IDataCarousel[];
-  success: boolean;
-  error: null | string;
-}>
 
 export default useFetchCarousel

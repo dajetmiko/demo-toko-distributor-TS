@@ -1,9 +1,8 @@
-import { FC, useState } from "react"
 import IkonMic from "../gbr/ikon-mic.svg"
 import IkonCari from "../gbr/ikon-cari.svg"
 import "./Pencarian.scss"
 
-const Pencarian: FC<IPencarian> = (p) => {
+const Pencarian = (p) => {
   return(
     <div className="kontainer-pencarian-apl">
       <div className="pencarian-apl">
@@ -16,5 +15,3 @@ const Pencarian: FC<IPencarian> = (p) => {
 }
 
 export default Pencarian
-
-interface IPencarian{}
