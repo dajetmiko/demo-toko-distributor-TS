@@ -1,3 +1,6 @@
+## versi TypeScript
+apl versi typescript
+
 ## struktur custom hooks
 
 struktur custom hooks menggunakan konsistensi hooks dari react. 
