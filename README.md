@@ -1,5 +1,5 @@
 ## repo versi javascript 
-versi javasript
+versi javasript. page merupakan responsive, jadi mempertimbangkan lebar browser
 
 ## struktur custom hooks
 
