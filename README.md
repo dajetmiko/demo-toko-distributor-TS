@@ -1,5 +1,5 @@
 ## versi TypeScript
-apl versi typescript
+apl versi typescript, laman merupakna responsive, jadi mengikuti lebar layar browser
 
 ## struktur custom hooks
 
