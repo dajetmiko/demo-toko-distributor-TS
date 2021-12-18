@@ -2,6 +2,7 @@ import "./Product.scss"
 import { FC, RefObject } from "react"
 import IDataProduct from "data/IDataProduct"
 import useFetchProduct from "../fungsi/useFetchProduct"
+import { BeatLoader } from "react-spinners"
 
 const Product: FC<IProduct> = (p) => {
   const [product, loading, error, lamanTerload, refTerakhir] = useFetchProduct()
@@ -16,6 +17,9 @@ const Product: FC<IProduct> = (p) => {
           />)
         }
       </ul>
+      <div className="kontainer-loader">
+        {loading && <BeatLoader color="red" size={50}/>}
+      </div>
     </section>
   )
 }

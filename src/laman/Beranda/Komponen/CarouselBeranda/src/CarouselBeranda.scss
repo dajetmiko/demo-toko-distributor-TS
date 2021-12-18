@@ -49,9 +49,19 @@
         }@else{
             right: 20px;
         }
+        opacity: 0.5;
+        transition: opacity 200ms;
+
         transform: translateY(-50%);
         &:hover{
             cursor: pointer;
+        }
+        @media screen and (max-width: 600px) {
+            width: 35px;
+            height: 35px;
+        }
+        &:hover{
+            opacity: 1;
         }
 
     }

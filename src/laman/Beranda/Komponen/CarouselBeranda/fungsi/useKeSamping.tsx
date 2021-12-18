@@ -9,6 +9,14 @@ const useKeSamping: TUseKeSamping = (listGbr) => {
   const [gbrSekarang, setGbrSekarang] = useState("")
   const [lokasi, setLokasi] = useState(0)
 
+  useEffect(() => {
+    for(let i = 0; i < 25; i++){
+      setTimeout(() => {
+        setKeKanan(true); 
+      }, i * 3000)
+    }
+  }, [])
+
   //dimulai saat baru mau mulai ke kanan, timeout saat animasi sudah selesai
   useEffect(() => {
     if(keKanan){

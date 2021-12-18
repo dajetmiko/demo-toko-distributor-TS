@@ -1,20 +1,24 @@
 import IDataCategory from "data/IDataCategory"
 import { FC } from "react"
+import useFetchKategori from "../fungsi/useFetchKategori"
+import Skeleton from "react-loading-skeleton"
 import "./Kategori.scss"
 
 const Kategori: FC<IKategori> = (p) => {
+  const [dataKategori, loadingKategori, erKategori] = useFetchKategori()
+
   return (
     <section className="kategori-apl">
-      <ul className="list-kategori">
-        {p.listKategori.map((nilai, indeks) => indeks >= 6 ? <IsiKategori kategori={nilai} key={indeks}/> : <></>)}
-      </ul>
+      {!loadingKategori ? <ul className="list-kategori">
+        {dataKategori.map((nilai, indeks) => indeks >= 6 ? <IsiKategori kategori={nilai} key={indeks}/> : <></>)}
+      </ul> : <Skeleton height={60} width={"100%"}/>}
     </section>
     )
 }
 
-interface IKategori{
-  listKategori: IDataCategory[]
-}
+
+
+interface IKategori{}
 
 
 const IsiKategori: FC<IIsiKategori> = (p) => {
